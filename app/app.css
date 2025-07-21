@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import 'tw-animate-css';
 
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif,
@@ -11,5 +12,29 @@ body {
 
   @media (prefers-color-scheme: dark) {
     color-scheme: dark;
+  }
+}
+
+
+h1{
+  @apply text-6xl leading-tight tracking-[-2px] font-semibold;
+}
+h2{
+  @apply text-3xl text-blue-800 hover:capitalize hover:font-bold animate-bounce
+}
+  
+/* ------------------------------------------------------- */
+
+@layer components{
+  .main_section {
+    @apply flex flex-col items-center gap-8 pt-12 mx-15 pb-5;
+  }
+
+  .page_heading {
+    @apply flex flex-col items-center gap-8 max-w-4xl text-center;
+  }
+
+  .text_gradient{
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#8c99ab] via-[#3a4454] to-[#6272c2];
   }
 }
