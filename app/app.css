@@ -29,6 +29,10 @@ h2{
   .main_section {
     @apply flex flex-col items-center gap-8 pt-12 mx-15 pb-5;
   }
+  
+  .navbar{
+    @apply bg-gray-800 flex flex-row justify-between items-center rounded-full p-4 w-full px-10 max-w-[1200px] mx-auto;
+  }
 
   .page_heading {
     @apply flex flex-col items-center gap-8 max-w-4xl text-center;
@@ -37,4 +41,17 @@ h2{
   .text_gradient{
     @apply bg-clip-text text-transparent bg-gradient-to-r from-[#8c99ab] via-[#3a4454] to-[#6272c2];
   }
+
+  .primary_button {
+    @apply primary_gradient hover:primary_gradient_hover text-white rounded-full px-4 py-2 cursor-pointer w-full;
+  }
+}
+
+@utility primary_gradient {
+  background: linear-gradient(to bottom, #000, #6272c2);
+  box-shadow: 0px 74px 21px 0px #6678ef00;
+}
+
+@utility primary_gradient_hover {
+  background: linear-gradient(to bottom, green, red);
 }

@@ -1,4 +1,5 @@
 import type { Route } from "./+types/home";
+import Navbar from "~/components/navbar";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -9,6 +10,8 @@ export function meta({}: Route.MetaArgs) {
 
 export default function Home() {
   return <main>
+    <Navbar />
+
     <section className="bg-gray-950 main_section">
       <div className="page_heading">
         <h1 className="text_gradient">Track your personal accomplishments through Resume/CV</h1>
