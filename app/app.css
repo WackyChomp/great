@@ -52,6 +52,9 @@ h2{
   .resume_card {
     @apply bg-blue-300 flex flex-col gap-8 h-[560px] w-full lg:w-[450px] xl:w-[490px] rounded-2xl p-4;
   }
+  .resume_card_header {
+    @apply flex flex-row gap-2 justify-between min-h-[110px] max-sm:flex-col items-center max-md:justify-center max-md:items-center;
+  }
 }
 
 @utility primary_gradient {
