@@ -15,6 +15,14 @@ const ResumeCard = ({resume} : { resume:Resume }) => {
           <ScoreCircle score={resume.feedback.overallScore} />
         </div>
       </div>
+
+      <div className="gradient_border animate-in fade-in duration-1000">
+        <div className="w-full h-full">
+          <img src={resume.imagePath} alt='winning_resume' 
+            className="w-full h-[370px] max-sm:h-[200px] object-cover"
+          />
+        </div>
+      </div>
       </Link>
     </div>
   )

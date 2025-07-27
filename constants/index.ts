@@ -4,7 +4,7 @@ export const resumes = [
     id: "1",
     companyName: "Pfizer",
     jobTitle: "Data Analyst",
-    imagePath: "",
+    imagePath: "https://s3.eu-west-2.amazonaws.com/resumedone-eu-west-2-staging/bZXEIdUBhh-photo.png",
     resumePath: "",
     feedback: {
       overallScore: 83,
@@ -19,7 +19,7 @@ export const resumes = [
     id: "2",
     companyName: "John Deere",
     jobTitle: "IT Project Manager",
-    imagePath: "",
+    imagePath: "https://resumegenius.com/wp-content/uploads/IT-Project-Manager-Resume-Template.png?w=1600",
     resumePath: "",
     feedback: {
       overallScore: 88,
@@ -34,7 +34,7 @@ export const resumes = [
     id: "3",
     companyName: "UnitedHealth Group",
     jobTitle: "Business Intelligence Specialist",
-    imagePath: "",
+    imagePath: "https://beamjobs.wpenginepowered.com/wp-content/uploads/2023/03/business-intelligence-analyst-standout-resume-example.png",
     resumePath: "",
     feedback: {
       overallScore: 90,
@@ -49,7 +49,7 @@ export const resumes = [
     id: "4",
     companyName: "Verizon",
     jobTitle: "Cybersecurity Analyst",
-    imagePath: "",
+    imagePath: "https://cdn-blog.novoresume.com/articles/cybersecurity-resume-example/Cybersecurity-Resume-Example.png",
     resumePath: "",
     feedback: {
       overallScore: 85,
@@ -64,7 +64,7 @@ export const resumes = [
     id: "5",
     companyName: "The Coca-Cola Company",
     jobTitle: "Digital Marketing Strategist",
-    imagePath: "",
+    imagePath: "https://resumaker.ai/s3/en-US/resume-examples/Digital-Strategist-Resume-Example.png",
     resumePath: "",
     feedback: {
       overallScore: 86,
