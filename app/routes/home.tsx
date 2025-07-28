@@ -19,16 +19,15 @@ export default function Home() {
         <h1 className="text_gradient">Track your personal accomplishments through Resume/CV</h1>
         <h2 className="animate-bounce">There's always more to improve on and it never ends</h2>
       </div>
+
+      {resumes.length> 0 && (
+        <div className="resumes_section py-12">
+          {resumes.map((resume) => (
+            <ResumeCard key={resume.id} resume={resume} />
+          ))}
+        </div>
+      )}
+
     </section>
-
-    {resumes.length> 0 && (
-      <div className="resumes_section">
-
-      </div>
-    )}
-
-    {resumes.map((resume) => (
-      <ResumeCard key={resume.id} resume={resume} />
-    ))}
   </main>
 }
