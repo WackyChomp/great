@@ -1,4 +1,6 @@
+import { useEffect } from 'react'
 import { usePuterStore } from '~/lib/puter'
+import { useLocation, useNavigate } from 'react-router'
 
 export const meta = () => ([
   { title: 'GREAT | Auth'},
@@ -8,7 +10,15 @@ export const meta = () => ([
 
 const auth = () => {
   const { isLoading, auth } = usePuterStore();
- 
+  const location = useLocation();
+  const next = location.search.split('next=')[1];
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if(auth.isAuthenticated) navigate(next);
+  }, [auth.isAuthenticated, next])
+  
+
   return (
     <main className='bg-red-900 bg-cover min-h-screen flex items-center justify-center'>
       <div className="gradient_border shadow-2xl">
@@ -19,7 +29,7 @@ const auth = () => {
           </div>
           <div>
             {isLoading ? (
-              <button className='auth_button animate-pulse'>
+              <button className='animate-pulse'>
                 <p>Signing in . .. ...</p>
               </button>
             ): (

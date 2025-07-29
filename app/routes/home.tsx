@@ -1,4 +1,9 @@
+import { useEffect } from "react";
+import { useNavigate } from 'react-router'
+import { usePuterStore } from '~/lib/puter'
+
 import type { Route } from "./+types/home";
+
 import Navbar from "~/components/navbar";
 import { resumes } from "../../constants";
 import ResumeCard from "~/components/ResumeCard";
@@ -11,6 +16,14 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Home() {
+  const { auth } = usePuterStore();
+  const navigate = useNavigate();
+
+  // commenting this out disables auth/login
+  useEffect(() => {
+    if(!auth.isAuthenticated) navigate('/auth?next=/');
+  }, [auth.isAuthenticated])
+  
   return <main>
     <Navbar />
 
