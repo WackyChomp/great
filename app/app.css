@@ -58,6 +58,10 @@ h2{
   .resume_card_header {
     @apply bg-blue-500 flex flex-row gap-2 justify-between min-h-[110px] max-sm:flex-col items-center max-md:justify-center max-md:items-center;
   }
+
+  .auth_button {
+    @apply text-white primary_gradient rounded-full py-4 px-8 cursor-pointer w-[600px] max-md:w-full text-3xl font-semibold;
+  }
 }
 
 @utility primary_gradient {
