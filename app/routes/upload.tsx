@@ -1,5 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, type FormEvent } from 'react'
 import Navbar from '~/components/Navbar'
+import FileUploader from '~/components/FileUploader'
+
 
 const upload = () => {
   const imgScanOne = `https://c.tenor.com/4AOeH4XlZ1EAAAAC/tenor.gif`
@@ -8,12 +10,16 @@ const upload = () => {
   const [isPorcessing, setIsPorcessing] = useState(false);
   const [statusText, setStatusText] = useState('')
 
+  const handleSubmit = (e:FormEvent<HTMLFormElement>) => {
+
+  }
+
   return (
     <main className='bg-green-700 bg-cover'>
       <Navbar />
 
       <section className='main_section'>
-        <div className="page_heading">
+        <div className="page_heading py-20">
           <h1>Actionable advice to secure your next role</h1>
 
           {isPorcessing ? (
@@ -23,6 +29,33 @@ const upload = () => {
             </>
           ): (
             <h2>Drop your resume here for ATS to rate</h2>
+          )}
+
+          {!isPorcessing && (
+            <form id='upload-form' onSubmit={handleSubmit} className='flex flex-col gap-5 mt-8'>
+              <div className="form_div">
+                <label htmlFor="company-name">Comany Name</label>
+                <input type="text" name='company-name' placeholder='Company Name' id='company-name' />
+              </div>
+              <div className="form_div">
+                <label htmlFor="job-title">Job Title</label>
+                <input type="text" name='job-title' placeholder='Job Title' id='job-title' />
+              </div>
+              <div className="form_div bg-red-950">
+                <label htmlFor="job-description">Job Description</label>
+                <textarea rows={5} name='job-description' placeholder='Job Description' id='job-description' />
+              </div>
+
+              <div className="form_div">
+                <label htmlFor="uploader">Job Description</label>
+                <div className="">Uploader</div>
+                <FileUploader />
+              </div>
+
+              <button className='primary_button' type='submit'>
+                Analyze Resume
+              </button>
+            </form>
           )}
 
         </div>

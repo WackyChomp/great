@@ -26,6 +26,11 @@ h2{
 /* ------------------------------------------------------- */
 
 @layer components{
+
+  .form_div {
+    @apply flex flex-col gap-2 w-full items-start;
+  }
+
   .main_section {
     @apply flex flex-col items-center gap-8 pt-12 mx-15 pb-5;
   }
