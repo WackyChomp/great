@@ -9,7 +9,12 @@ const upload = () => {
 
   const [isPorcessing, setIsPorcessing] = useState(false);
   const [statusText, setStatusText] = useState('')
+  const [file, setFile] = useState<File | null>(null)
 
+  const handleFileSelect = (file: File | null) => {
+    setFile(file)
+  }
+  
   const handleSubmit = (e:FormEvent<HTMLFormElement>) => {
 
   }
@@ -49,7 +54,7 @@ const upload = () => {
               <div className="form_div">
                 <label htmlFor="uploader">Job Description</label>
                 <div className="">Uploader</div>
-                <FileUploader />
+                <FileUploader onFileSelect={handleFileSelect}/>
               </div>
 
               <button className='primary_button' type='submit'>
