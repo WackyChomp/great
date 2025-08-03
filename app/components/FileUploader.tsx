@@ -8,7 +8,6 @@ interface FileUploaderProps{
 const FileUploader = ({ onFileSelect } : FileUploaderProps) => {
   const uploadIcon = `data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLXVwbG9hZC1pY29uIGx1Y2lkZS11cGxvYWQiPjxwYXRoIGQ9Ik0xMiAzdjEyIi8+PHBhdGggZD0ibTE3IDgtNS01LTUgNSIvPjxwYXRoIGQ9Ik0yMSAxNXY0YTIgMiAwIDAgMS0yIDJINWEyIDIgMCAwIDEtMi0ydi00Ii8+PC9zdmc+`
 
-
   const onDrop = useCallback((acceptedFiles: File[]) => {
     // Do something with the files
     const file = acceptedFiles[0] || null;
@@ -33,12 +32,15 @@ const FileUploader = ({ onFileSelect } : FileUploaderProps) => {
 
         <div className="space-y-5 cursor-pointer">
           <div className="mx-auto w-16 h-16 flex items-center justify-center">
-            <img src={uploadIcon} alt="upload" className='size-25' />
+            <img src={uploadIcon} alt="upload" className='size-20 animate-bounce' />
           </div>
 
           {file ? (
-            <div>
-
+            <div className='flex items-center space-x-4'>
+              <img src='https://img.icons8.com/ios/200/pdf--v1.png' alt="pdf" className='size-10' />
+              <p className='text-orange-500 text-lg font-medium truncate'>
+                {file.name}
+              </p>
             </div>
           ): (
             <div>
