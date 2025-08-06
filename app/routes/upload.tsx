@@ -4,6 +4,8 @@ import FileUploader from '~/components/FileUploader'
 import { usePuterStore } from '~/lib/puter'
 import { useNavigate } from 'react-router'
 
+import { convertPdfToImage } from '~/lib/pdf2img'
+
 
 const upload = () => {
   const imgScanOne = `https://c.tenor.com/4AOeH4XlZ1EAAAAC/tenor.gif`
@@ -26,6 +28,7 @@ const upload = () => {
     if(!uploadedFile) return setStatusText('Error: failed to upload file')
 
     setStatusText('Converting to image ...')
+    const imageFile:any = await convertPdfToImage(file);
   }
 
 
