@@ -5,6 +5,7 @@ import { usePuterStore } from '~/lib/puter'
 import { useNavigate } from 'react-router'
 
 import { convertPdfToImage } from '~/lib/pdf2img'
+import { generateUUID } from '~/lib/utils'
 
 
 const upload = () => {
@@ -29,6 +30,29 @@ const upload = () => {
 
     setStatusText('Converting to image ...')
     const imageFile:any = await convertPdfToImage(file);
+    if(!imageFile.file) return setStatusText('Error: failed to convert PDF to img')
+    
+    setStatusText('Uploading the image ...')
+    const uploadedImage = await fs.upload([imageFile.file])
+    if(!uploadedImage) return setStatusText('Error: failed to upload image')
+
+    setStatusText('Preparing data ...')
+    const uuid:any = generateUUID();
+    const data = {
+      id: uuid,
+      resumePath: uploadedFile.path,
+      imagePath: uploadedImage.path,
+      companyName, jobTitle, jobDescription,
+      feedback: '',
+    }
+    await kv.set(`resume:${uuid}`, JSON.stringify(data));
+
+    setStatusText('Analyzing ...');
+
+    const feedback:any = await ai.feedback(
+      uploadedFile.path,
+      `You are an expert in ATS (applicant tracking system) and resume analysis...`
+    )
   }
 
 
