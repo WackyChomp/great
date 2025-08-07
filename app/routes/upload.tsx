@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router'
 
 import { convertPdfToImage } from '~/lib/pdf2img'
 import { generateUUID } from '~/lib/utils'
+import { prepareInstructions } from "../../constants";
 
 
 const upload = () => {
@@ -51,8 +52,18 @@ const upload = () => {
 
     const feedback:any = await ai.feedback(
       uploadedFile.path,
-      `You are an expert in ATS (applicant tracking system) and resume analysis...`
+      prepareInstructions({jobTitle, jobDescription})
     )
+
+    if(!feedback) return setStatusText('Error: Failed to analyze resume');
+    const feedbackText = feedback.message.content === 'string'
+      ? feedback.message.content
+      : feedback.message.content[0].text;
+
+      data.feedback = JSON.parse(feedbackText)      // append to the empty feedback in 'const data'
+      await kv.set(`resume${uuid}`, JSON.stringify(data));
+      setStatusText('Analysis completed, redirecting ...')
+      console.log(data);
   }
 
 
