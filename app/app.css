@@ -27,6 +27,10 @@ h2{
 
 @layer components{
 
+  .back_button{
+    @apply flex flex-row items-center gap-2 border border-yellow-400 rounded-lg p-2 shadow-sm;
+  }
+
   .form_div {
     @apply flex flex-col gap-2 w-full items-start;
   }
@@ -70,6 +74,10 @@ h2{
 
   .uploader_selected_file{
     @apply flex items-center justify-between p-3 bg-gray-900 rounded-2xl;
+  }
+
+  .resume_nav{
+    @apply flex flex-row justify-between items-center p-4 border-b border-blue-700;
   }
 }
 
