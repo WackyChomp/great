@@ -79,6 +79,10 @@ h2{
   .resume_nav{
     @apply flex flex-row justify-between items-center p-4 border-b border-blue-700;
   }
+
+  .feedback_section {
+    @apply flex flex-col gap-8 w-1/2 px-8 max-lg:w-full py-6;
+  }
 }
 
 @utility primary_gradient {

@@ -60,7 +60,7 @@ const FileUploader = ({ onFileSelect } : FileUploaderProps) => {
                 <img src={uploadIcon} alt="upload" className='size-20 animate-bounce' />
               </div>
 
-              <p className='text-pink-600 text-lg'>
+              <div className='text-pink-600 text-lg'>
                 <span className='font-semibold'>
                   Click to Upload
                 </span>
@@ -71,7 +71,7 @@ const FileUploader = ({ onFileSelect } : FileUploaderProps) => {
                 <p className='text-blue-600 text-lg'>
                   PDF (max 20MB)
                 </p>
-              </p>
+              </div>
             </div>
           )}
         </div>
