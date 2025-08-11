@@ -42,7 +42,7 @@ const Resume = () => {
 
       setFeedback(data.feedback);
 
-      console.log(resumeUrl, imageUrl, data.feedback)
+      console.log({resumeUrl, imageUrl, feedback:data.feedback})
     }
   
     loadResume();
@@ -67,7 +67,7 @@ const Resume = () => {
         <section className='bg-blue-500 feedback_section bg-cover h-[100vh] sticky top-0 items-center justify-center'>
           {imageUrl && resumeUrl && (
             <div className="animate-in fade-in duration-1000 gradient_border max-sm:m-0 h-[90%] max-w-xl:h-fit w-fit">
-              <a href="">
+              <a href={resumeUrl} target='_blank' rel='noopener noreferrer'>
                 <img src={imageUrl} alt="" title='resume' 
                   className='w-full h-full object-contain rounded-2xl'
                 />
