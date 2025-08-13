@@ -80,6 +80,13 @@ h2{
     @apply flex flex-row justify-between items-center p-4 border-b border-blue-700;
   }
 
+  .resume_summary {
+    @apply flex flex-row items-center justify-center p-4 gap-4;
+    .category {
+      @apply flex flex-row gap-2 items-center bg-green-500 rounded-2xl p-4 w-full justify-between;
+    }
+  }
+
   .feedback_section {
     @apply flex flex-col gap-8 w-1/2 px-8 max-lg:w-full py-6;
   }
