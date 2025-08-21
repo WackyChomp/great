@@ -41,7 +41,7 @@ const ResumeCard = ({resume:{ companyName, id, jobTitle, feedback, imagePath }} 
       {resumeUrl && (
         <div className="gradient_border animate-in fade-in duration-1000">
           <div className="w-full h-full">
-            <img src={imagePath} alt='winning_resume' 
+            <img src={resumeUrl} alt='winning_resume' 
               className="w-full h-[370px] max-sm:h-[200px] object-cover"
             />
           </div>
